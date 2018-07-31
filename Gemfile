@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'epages-rest', git: 'https://github.com/ePages-de/epages-rest-ruby.git'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'

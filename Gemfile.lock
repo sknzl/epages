@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ePages-de/epages-rest-ruby.git
+  revision: 6335a43193c7f2c7bddaccabbac6413f7e3257c4
+  specs:
+    epages-rest (1.0.7)
+      activesupport (~> 5.0)
+      http (~> 2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,6 +50,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     autoprefixer-rails (9.0.2)
       execjs
@@ -56,6 +66,8 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
@@ -67,6 +79,15 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    http (2.2.2)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (1.0.3)
+    http_parser.rb (0.6.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -101,6 +122,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    public_suffix (3.0.2)
     puma (3.12.0)
     rack (2.0.5)
     rack-proxy (0.6.4)
@@ -172,6 +194,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.17)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -193,6 +218,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   dotenv-rails
+  epages-rest!
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
