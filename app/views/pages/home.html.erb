@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Epages shop overview</h1>
+  <p> Total items in shop: <%= @shop.products.items.count %> </p>
+  <p> Available Items: </p>
+  <ul>
+    <% @shop.products.items.each do |product| %>
+      <li>
+        <%= product.name %>
+      </li>
+    <%end%>
+  </ul>
+</div>
+
