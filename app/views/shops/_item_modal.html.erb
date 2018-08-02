@@ -1,0 +1,23 @@
+<!-- Modal -->
+<div id="<%= product.product_id %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= product.name %></h4>
+      </div>
+      <div class="modal-body">
+        <p><%= product.short_description.html_safe %></p>
+      <%= link_to "Show details", shop_path(@shop, product_id: product.product_id), remote: true, class: "modal-button" %>
+      <div class="modal-details">
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

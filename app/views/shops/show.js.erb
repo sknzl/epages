@@ -1,0 +1,16 @@
+console.log("hello from show.js.erb")
+console.log("<%= @product_detail %>")
+var modal = document.getElementById('<%= @product_detail %>');
+var button = modal.getElementsByClassName('modal-button')[0];
+var details = modal.getElementsByClassName('modal-details')[0];
+// console.log(button[0].innerHTML)
+
+if (button.innerHTML === "Show details") {
+    button.innerHTML = "Hide details";
+    details.innerHTML = "Total order: <%= @shop_api.sales(product_id: @product_detail).sales_per_currency.first.total_orders%>";
+} else if (button.innerHTML === "Hide details") {
+    button.innerHTML = "Show details";
+    details.innerHTML = "";
+}
+
+

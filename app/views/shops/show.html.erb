@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Shop overview</h1>
+  <p>Shop name: <%= @shop.name %> </p>
+  <p> Total items in shop: <%= @shop_api.products.items.count %> </p>
+  <p> Available Items: </p>
+  <ul>
+  <% @shop_api.products.items.each do |product| %>
+    <li>
+      <%= product.name %> <%= link_to "details", "#", data: {toggle: "modal", target: "##{product.product_id}"} %>
+    </li>
+  <%end%>
+  </ul>
+  <%= link_to "go back", shops_path %>
+
+</div>
+
+<% @shop_api.products.items.each do |product| %>
+ <%= render partial: "item_modal", locals: {product: product} %>
+<%end%>
+

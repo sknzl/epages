@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Index shops</h1>
+  <ul>
+  <% @shops.each do |shop| %>
+    <li>
+      Shopname: <%=shop.name%>
+      <%= link_to "Connect", shop_path(shop) %>
+    </li>
+  <% end %>
+  </ul>
+</div>
