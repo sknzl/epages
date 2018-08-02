@@ -3,6 +3,12 @@ console.log("<%= @product_detail %>")
 var modal = document.getElementById('<%= @product_detail %>');
 var button = modal.getElementsByClassName('modal-button')[0];
 var details = modal.getElementsByClassName('modal-details')[0];
+modal.getElementsByClassName('close-button')[0].addEventListener("click", resetModal);
+modal.getElementsByClassName('close-button')[1].addEventListener("click", resetModal);
+function resetModal() {
+    button.innerHTML = "Show details";
+    details.innerHTML = "";;
+}
 // console.log(button[0].innerHTML)
 
 if (button.innerHTML === "Show details") {
