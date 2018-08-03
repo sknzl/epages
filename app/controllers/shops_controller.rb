@@ -6,7 +6,16 @@ class ShopsController < ApplicationController
 
   def show
     @shop_api = Epages::REST::Shop.new(@shop.host, @shop.name, @shop.token)
-    @product_detail = params[:product_id]
+    @product_id = params[:product_id]
+
+    products = @shop_api.products
+    @customers = @shop_api.customers
+
+    @orders_details = []
+    @shop_api.orders.items.each do |order|
+      @orders_details << @shop_api.order(order.order_id)
+    end
+    #orders_details.first.line_item_container.product_line_items
   end
 
   private
