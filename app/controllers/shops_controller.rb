@@ -8,8 +8,6 @@ class ShopsController < ApplicationController
     @shop_api = Epages::REST::Shop.new(@shop.host, @shop.name, @shop.token)
     @product_id = params[:product_id]
 
-    products = @shop_api.products
-    @customers = @shop_api.customers
 
     @orders_details = []
     @shop_api.orders.items.each do |order|

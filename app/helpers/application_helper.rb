@@ -13,7 +13,7 @@ module ApplicationHelper
     # byebug
     customers = []
     product_orders.each do |order|
-      customers << order.billing_address.first_name + ' '  +order.billing_address.last_name
+      customers << order.billing_address.first_name + ' ' + order.billing_address.last_name
     end
     return customers
   end
