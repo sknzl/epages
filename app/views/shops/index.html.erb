@@ -1,10 +1,13 @@
 <div class="container">
   <h1>Index shops</h1>
+  <%= link_to "New shop", new_shop_path %>
   <ul>
   <% @shops.each do |shop| %>
     <li>
       Shopname: <%=shop.name%>
       <%= link_to "Connect", shop_path(shop) %>
+      <%= link_to "Edit", edit_shop_path(shop) %>
+      <%= link_to "Delete", shop_path(shop), method: :delete %>
     </li>
   <% end %>
   </ul>
