@@ -1,20 +1,26 @@
 <div class="container">
-  <h1>Shop overview</h1>
+  <h1>Shop overview </h1>
+  <%= link_to "Back to shops", shops_path, id: "link-shops" %>
   <p>Shop name: <%= @shop.name %> </p>
   <p> Total items in shop: <%= @shop_api.products.items.count %> </p>
-  <p> Available Items: </p>
-  <ul>
+  <div class="row">
   <% @shop_api.products.items.each do |product| %>
-    <li>
-      <%= product.name %> <%= link_to "details", "#", data: {toggle: "modal", target: "##{product.product_id}"} %>
-    </li>
+    <div class="col-xs-3">
+    <%= link_to "#", data: {toggle: "modal", target: "##{product.product_id}"} do %>
+      <div class="card">
+        <img src="<%= product.images.first.url%>" alt="Avatar" style="width:100%">
+        <div class="card-container-flex">
+          <div class="card-container text-center">
+            <b> <%= product.name %> </b>
+          </div>
+        </div>
+      </div>
+    <%end%>
+    </div>
   <%end%>
-  </ul>
-  <%= link_to "go back", shops_path %>
-
+  </div>
 </div>
 
 <% @shop_api.products.items.each do |product| %>
  <%= render partial: "item_modal", locals: {product: product} %>
 <%end%>
-
