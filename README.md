@@ -17,7 +17,7 @@ Shops can be created using existing credentials of ePages shops. After connectio
 
 Predefined seeds exist with a connection to a development shop.
 
-##Tests
+## Tests
 
 Simple tests for the models and controller are included and can be executed using:
 
