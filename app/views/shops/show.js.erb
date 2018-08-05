@@ -1,20 +1,23 @@
 console.log("hello from show.js.erb")
-console.log("<%= @product_detail %>")
+console.log("<%= @product_id %>")
 var modal = document.getElementById('<%= @product_id %>');
 var button = modal.getElementsByClassName('modal-button')[0];
 var details = modal.getElementsByClassName('modal-details')[0];
-modal.getElementsByClassName('close-button')[0].addEventListener("click", resetModal);
-modal.getElementsByClassName('close-button')[1].addEventListener("click", resetModal);
+
+Array.from(modal.getElementsByClassName('close-button')).forEach(function (element, index){
+  element.addEventListener("click", resetModal);
+});
+
 function resetModal() {
     button.innerHTML = "Show details";
     details.innerHTML = "";;
 }
-// console.log(button[0].innerHTML)
 
 if (button.innerHTML === "Show details") {
     button.innerHTML = "Hide details";
-    details.innerHTML = 'Total order: <%= @shop_api.sales(product_id: @product_id).sales_per_currency.first.total_orders%> \
-                        <p> Customers:\ </p> \
+    <% if  @shop_api.sales(product_id: @product_id).sales_per_currency.any? %>
+      details.innerHTML = 'Total order: <%= @shop_api.sales(product_id: @product_id).sales_per_currency.first.total_orders%> \
+                        <p> Customers who bought this product:\ </p> \
                         <ul> \
                         <%find_buyers(@product_id, @orders_details).each do |buyer| %> \
                           <li>\
@@ -22,6 +25,9 @@ if (button.innerHTML === "Show details") {
                           </li>\
                         <%end %>\
                         </ul>';
+    <%else%>
+      details.innerHTML = 'No sales of this product'
+    <%end%>
 } else if (button.innerHTML === "Hide details") {
     button.innerHTML = "Show details";
     details.innerHTML = "";
