@@ -42,7 +42,6 @@ class ShopsController < ApplicationController
     @shop_api.orders.items.each do |order|
       @orders_details << @shop_api.order(order.order_id)
     end
-    #orders_details.first.line_item_container.product_line_items
   end
 
   private
