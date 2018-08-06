@@ -16,15 +16,7 @@ function resetModal() {
 if (button.innerHTML === "Show details") {
     button.innerHTML = "Hide details";
     <% if  @shop_api.sales(product_id: @product_id).sales_per_currency.any? %>
-      details.innerHTML = 'Total order: <%= @shop_api.sales(product_id: @product_id).sales_per_currency.first.total_orders%> \
-                        <p> Customers who bought this product:\ </p> \
-                        <ul> \
-                        <%find_buyers(@product_id, @orders_details).each do |buyer| %> \
-                          <li>\
-                            <%= buyer %>\
-                          </li>\
-                        <%end %>\
-                        </ul>';
+      details.innerHTML = '<%= j render "details_product"%>';
     <%else%>
       details.innerHTML = 'No sales of this product'
     <%end%>

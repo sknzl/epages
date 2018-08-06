@@ -1,0 +1,25 @@
+Total order: <%= @shop_api.sales(product_id: @product_id).sales_per_currency.first.total_orders%>
+<p> Customers who bought this product:</p>
+<ul>
+<%find_buyers(@product_id, @orders_details).each do |buyer| %>
+  <li>
+    <%= buyer %>
+  </li>
+<%end %>
+</ul>
+<p> Product orders delivered: </p>
+<ul>
+<%find_delivered(@product_id, @orders_details).each do |delivered| %>
+  <li>
+    <%= delivered %>
+  </li>
+<%end %>
+</ul>
+<p> Product orders undelivered:</p>
+<ul>
+<%find_undelivered(@product_id, @orders_details).each do |delivered| %>
+  <li>
+    <%= delivered %>
+  </li>
+<%end %>
+</ul>
