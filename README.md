@@ -11,7 +11,7 @@ $ rails db:create db:migrate db:seed
 ```
 ## How to use
 
-Shops can be created using existing credentials of ePages shops. After connection to a shop existing products and sales details can be viewed.
+Shops can be created using existing credentials of ePages shops. After connecting to a shop existing products and sales and delivery details can be viewed.
 
 ## Remarks
 
